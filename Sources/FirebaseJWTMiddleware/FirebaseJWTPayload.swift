@@ -18,6 +18,7 @@ public struct FirebaseJWTPayload: JWTPayload {
     public var name: String?
     public var authTime: Date?
     public var isEmailVerified: Bool?
+    public var phoneNumber: String?
     
     enum CodingKeys: String, CodingKey {
         case issuer = "iss"
@@ -29,6 +30,7 @@ public struct FirebaseJWTPayload: JWTPayload {
         case name = "name"
         case authTime = "auth_time"
         case isEmailVerified = "email_verified"
+        case phoneNumber = "phone_number"
     }
     
     public func verify(using signer: JWTSigner) throws {
